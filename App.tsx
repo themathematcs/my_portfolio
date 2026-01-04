@@ -128,8 +128,41 @@ const AIChat = lazy(() => import('./components/AIChat')); // This is the compone
 const PaintBackground = () => {
     // ... (Your PaintBackground component code)
     return (
-        <div className="fixed inset-0 -z-10 overflow-hidden bg-[#02040a]">
-            {/* ... (Motion blobs and noise texture) ... */}
+        <div className="fixed inset-0 -z-10 overflow-hidden bg-[#050814]">
+            <div className="absolute inset-0 bg-gradient-to-b from-slate-900/40 via-[#060a1b]/70 to-[#02040a]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_15%,rgba(0,243,255,0.14),transparent_55%),radial-gradient(circle_at_80%_25%,rgba(188,19,254,0.12),transparent_55%),radial-gradient(circle_at_50%_85%,rgba(255,0,255,0.10),transparent_60%)]" />
+
+            <motion.div
+                animate={{
+                    x: [0, 90, -60, 0],
+                    y: [0, -70, 50, 0],
+                    scale: [1, 1.15, 0.95, 1],
+                }}
+                transition={{ duration: 24, repeat: Infinity, ease: 'easeInOut' }}
+                className="absolute top-[-15%] left-[-10%] w-[42vw] h-[42vw] bg-neon-cyan rounded-full mix-blend-screen opacity-25 blur-[120px]"
+            />
+
+            <motion.div
+                animate={{
+                    x: [0, -110, 70, 0],
+                    y: [0, 80, -60, 0],
+                    scale: [1, 1.2, 0.95, 1],
+                }}
+                transition={{ duration: 30, repeat: Infinity, ease: 'easeInOut' }}
+                className="absolute top-[5%] right-[-12%] w-[48vw] h-[48vw] bg-neon-purple rounded-full mix-blend-screen opacity-22 blur-[130px]"
+            />
+
+            <motion.div
+                animate={{
+                    x: [0, 120, -80, 0],
+                    y: [0, 60, -40, 0],
+                    scale: [1, 0.9, 1.25, 1],
+                }}
+                transition={{ duration: 34, repeat: Infinity, ease: 'easeInOut' }}
+                className="absolute bottom-[-18%] left-[18%] w-[55vw] h-[55vw] bg-neon-pink rounded-full mix-blend-screen opacity-18 blur-[140px]"
+            />
+
+            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-15 mix-blend-overlay pointer-events-none" />
         </div>
     );
 };
