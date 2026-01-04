@@ -145,8 +145,8 @@ const PaintBackground = () => {
             const nx = (e.clientX / w) * 2 - 1;
             const ny = (e.clientY / h) * 2 - 1;
 
-            mvX.set(nx * 18);
-            mvY.set(ny * 12);
+            mvX.set(nx * 10);
+            mvY.set(ny * 7);
         };
 
         window.addEventListener('pointermove', handleMove, { passive: true });
@@ -156,8 +156,8 @@ const PaintBackground = () => {
     return (
         <div className="fixed inset-0 -z-10 overflow-hidden bg-[#050814] pointer-events-none">
             <motion.div className="absolute inset-0" style={{ x, y }}>
-                <div className="absolute inset-0 bg-gradient-to-b from-slate-900/40 via-[#060a1b]/70 to-[#02040a]" />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_15%,rgba(0,243,255,0.14),transparent_55%),radial-gradient(circle_at_80%_25%,rgba(188,19,254,0.12),transparent_55%),radial-gradient(circle_at_50%_85%,rgba(255,0,255,0.10),transparent_60%)]" />
+                <div className="absolute inset-0 bg-gradient-to-b from-slate-950/20 via-[#060a1b]/55 to-[#02040a]" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_15%,rgba(0,243,255,0.08),transparent_58%),radial-gradient(circle_at_80%_25%,rgba(188,19,254,0.07),transparent_58%),radial-gradient(circle_at_50%_85%,rgba(255,0,255,0.06),transparent_62%)]" />
 
                 <motion.div
                     animate={{
@@ -166,7 +166,7 @@ const PaintBackground = () => {
                         scale: [1, 1.15, 0.95, 1],
                     }}
                     transition={{ duration: 24, repeat: Infinity, ease: 'easeInOut' }}
-                    className="absolute top-[-15%] left-[-10%] w-[42vw] h-[42vw] bg-neon-cyan rounded-full mix-blend-screen opacity-25 blur-[120px]"
+                    className="absolute top-[-15%] left-[-10%] w-[42vw] h-[42vw] bg-neon-cyan rounded-full mix-blend-screen opacity-16 blur-[130px]"
                 />
 
                 <motion.div
@@ -176,7 +176,7 @@ const PaintBackground = () => {
                         scale: [1, 1.2, 0.95, 1],
                     }}
                     transition={{ duration: 30, repeat: Infinity, ease: 'easeInOut' }}
-                    className="absolute top-[5%] right-[-12%] w-[48vw] h-[48vw] bg-neon-purple rounded-full mix-blend-screen opacity-22 blur-[130px]"
+                    className="absolute top-[5%] right-[-12%] w-[48vw] h-[48vw] bg-neon-purple rounded-full mix-blend-screen opacity-14 blur-[140px]"
                 />
 
                 <motion.div
@@ -186,11 +186,12 @@ const PaintBackground = () => {
                         scale: [1, 0.9, 1.25, 1],
                     }}
                     transition={{ duration: 34, repeat: Infinity, ease: 'easeInOut' }}
-                    className="absolute bottom-[-18%] left-[18%] w-[55vw] h-[55vw] bg-neon-pink rounded-full mix-blend-screen opacity-18 blur-[140px]"
+                    className="absolute bottom-[-18%] left-[18%] w-[55vw] h-[55vw] bg-neon-pink rounded-full mix-blend-screen opacity-12 blur-[150px]"
                 />
             </motion.div>
 
-            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-15 mix-blend-overlay" />
+            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(2,4,10,0.00)_0%,rgba(2,4,10,0.55)_70%,rgba(2,4,10,0.75)_100%)]" />
         </div>
     );
 };
