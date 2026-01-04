@@ -143,7 +143,11 @@ import { MessageSquare, X, Send, Bot, Loader2 } from 'lucide-react';
 import { streamMessageFromGemini } from '../services/geminiService'; 
 import { ChatMessage } from '../types';
 
-const AIChat: React.FC = () => {
+type AIChatProps = {
+  onClose?: () => void;
+};
+
+const AIChat: React.FC<AIChatProps> = ({ onClose }) => {
   // We keep the state management local, but use the button to control it.
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([
@@ -215,7 +219,10 @@ const AIChat: React.FC = () => {
               
               {/* ⬅️ FIX: CLOSE BUTTON IMPLEMENTATION */}
               <button
-                onClick={() => setIsOpen(false)} // ⬅️ Sets the state to close the chat box
+                onClick={() => {
+                  setIsOpen(false);
+                  onClose?.();
+                }}
                 className="text-white/60 hover:text-white transition-colors"
                 aria-label="Close Chat"
               >

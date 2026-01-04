@@ -119,6 +119,7 @@ import Footer from './components/Footer';
 const About = lazy(() => import('./components/About'));
 const Skills = lazy(() => import('./components/Skills'));
 const Certifications = lazy(() => import('./components/Certifications'));
+const Profession = lazy(() => import('./components/Profession'));
 const Projects = lazy(() => import('./components/Projects'));
 const AIChat = lazy(() => import('./components/AIChat')); // This is the component we'll toggle
 
@@ -162,6 +163,7 @@ function App() {
                 <About />
                 <Skills />
                 <Certifications />
+                <Profession />
                 <Projects />
                 
                 {/* AIChat is now conditionally rendered */}

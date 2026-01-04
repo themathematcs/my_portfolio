@@ -72,6 +72,14 @@ const Hero: React.FC = () => {
             View Projects
           </a>
 
+          <a 
+            href="#profession"
+            className="flex items-center gap-2 px-6 py-3 glass-card bg-neon-cyan/5 border-neon-cyan/20 text-neon-cyan rounded-xl hover:bg-neon-cyan/20 transition-all font-medium"
+          >
+            <Terminal size={20} />
+            Services
+          </a>
+
           <button 
             className="flex items-center gap-2 px-6 py-3 glass-card bg-neon-purple/5 border-neon-purple/20 text-neon-purple rounded-xl hover:bg-neon-purple/20 transition-all font-medium disabled:opacity-70 disabled:cursor-not-allowed"
             onClick={handleDownload}
