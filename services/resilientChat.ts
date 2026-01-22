@@ -3,30 +3,16 @@ import { ABOUT_ME, SKILLS, PROJECTS, CERTIFICATIONS, CONTACT_INFO, AUTHOR_NAME }
 
 const PROXY_URL = (import.meta as any).env?.VITE_GEMINI_PROXY_URL || '/.netlify/functions/gemini-proxy';
 
-const sleep = (ms: number) => new Promise((res) => setTimeout(res, ms));
-
-async function fetchWithRetry(url: string, init: RequestInit, attempts = 3, timeoutMs = 15000): Promise<Response> {
-  let lastErr: any;
-  for (let i = 0; i < attempts; i++) {
-    const controller = new AbortController();
-    const t = setTimeout(() => controller.abort(), timeoutMs);
-    try {
-      const resp = await fetch(url, { ...init, signal: controller.signal });
-      clearTimeout(t);
-      if (resp.ok) return resp;
-      if (resp.status >= 500 || resp.status === 429) {
-        lastErr = new Error(`HTTP ${resp.status}`);
-      } else {
-        const data = await resp.text().catch(() => '');
-        throw new Error(data || `HTTP ${resp.status}`);
-      }
-    } catch (e) {
-      clearTimeout(t);
-      lastErr = e;
-    }
-    await sleep(1000 * Math.pow(2, i)); // 1s, 2s, 4s
+// Single-attempt fetch with optional timeout; fallback handled on catch (no retries)
+async function singleFetch(url: string, init: RequestInit, timeoutMs = 15000): Promise<Response> {
+  const controller = new AbortController();
+  const t = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const resp = await fetch(url, { ...init, signal: controller.signal });
+    return resp;
+  } finally {
+    clearTimeout(t);
   }
-  throw lastErr || new Error('Request failed');
 }
 
 function buildLocalAnswer(question: string): string {
@@ -83,7 +69,7 @@ export async function streamMessageResilient(
   setMessages: React.Dispatch<React.SetStateAction<ChatMessage[]>>
 ) {
   try {
-    const response = await fetchWithRetry(PROXY_URL, {
+    const response = await singleFetch(PROXY_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ userMessage }),

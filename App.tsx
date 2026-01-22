@@ -156,8 +156,8 @@ function App() {
                     <p className="text-xl text-neon-cyan">Loading portfolio sections...</p>
                 </div>
             }>
-                <Skills />
                 <About />
+                <Skills />
                 <Profession />
                 <UseCases />
                 <Projects />

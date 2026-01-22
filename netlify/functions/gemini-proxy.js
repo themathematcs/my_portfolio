@@ -1,30 +1,10 @@
-// Netlify Function: Gemini proxy with basic retry/backoff
+// Netlify Function: Gemini proxy (single attempt)
 // Env var required: GEMINI_API_KEY (configured in Netlify project settings)
 
 const MODEL = 'gemini-1.5-flash-latest';
 const BASE = 'https://generativelanguage.googleapis.com/v1beta/models';
 
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-
-async function fetchWithRetry(url, init, attempts = 3) {
-  let lastErr;
-  for (let i = 0; i < attempts; i++) {
-    try {
-      const res = await fetch(url, init);
-      if (res.ok) return res;
-      if (res.status >= 500 || res.status === 429) {
-        lastErr = new Error(`HTTP ${res.status}`);
-      } else {
-        const txt = await res.text().catch(() => '');
-        throw new Error(txt || `HTTP ${res.status}`);
-      }
-    } catch (e) {
-      lastErr = e;
-    }
-    await sleep(1000 * Math.pow(2, i)); // 1s, 2s
-  }
-  throw lastErr || new Error('Request failed');
-}
+// Single fetch only; any error is returned to client to handle fallback
 
 export default async (req, context) => {
   try {
@@ -53,7 +33,7 @@ export default async (req, context) => {
       ],
     };
 
-    const res = await fetchWithRetry(url, {
+    const res = await fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
