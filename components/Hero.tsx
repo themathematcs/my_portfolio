@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-4">
+    <section id="home" className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-4">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -31,7 +31,7 @@ const Hero: React.FC = () => {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-green opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-neon-green"></span>
           </span>
-          Open to Work
+          autoQriz254
         </motion.div>
 
         <h1 className="font-display text-5xl md:text-8xl font-bold mb-6 tracking-tight leading-tight">
@@ -45,7 +45,7 @@ const Hero: React.FC = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
         >
-          AI & Machine Learning Engineer crafting <span className="text-neon-cyan font-normal">intelligent solutions</span> with data and code.
+          Experienced Software & AI Engineer delivering <span className="text-neon-cyan font-normal">production-ready applications</span> — mobile, systems & automation, and advanced AI (incl. medical) with secure, scalable architecture.
         </motion.p>
 
         <motion.div 
@@ -107,3 +107,5 @@ const Hero: React.FC = () => {
 };
 
 export default Hero;
+
+

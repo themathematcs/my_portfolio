@@ -5,37 +5,92 @@ import { Shield, MonitorSmartphone, Palette, CheckCircle2 } from 'lucide-react';
 const Profession: React.FC = () => {
   const services = [
     {
-      title: 'Web Design',
-      subtitle: 'Modern, conversion-focused websites',
-      icon: <Palette className="text-neon-cyan" size={26} />,
+      title: 'Mobile Apps Development',
+      subtitle: 'Production-grade Android & cross‑platform apps',
+      icon: <MonitorSmartphone className="text-neon-cyan" size={26} />,
       highlights: [
-        'Clean UI/UX with responsive layouts',
-        'Performance-first structure and accessibility',
-        'Design systems that scale with your brand',
+        'Robust architecture, offline-first & sync',
+        'Modern UI with responsive, accessible design',
+        'CI/CD, crash analytics, and app store readiness',
       ],
       accent: 'from-neon-cyan/20 via-neon-purple/10 to-transparent',
     },
     {
-      title: 'Desktop Applications',
-      subtitle: 'Reliable tools for real workflows',
-      icon: <MonitorSmartphone className="text-neon-purple" size={26} />,
+      title: 'Systems Development & Automation',
+      subtitle: 'Reliable business systems and workflows',
+      icon: <Shield className="text-neon-purple" size={26} />,
       highlights: [
-        'Feature-rich CRUD and automation apps',
-        'Offline-first experiences and data integrity',
-        'Packaging and versioning for deployment',
+        'Custom CRM/ERP, dashboards, and data pipelines',
+        'Process automation: schedulers, bots, integrations',
+        'Scalable APIs with security and observability',
       ],
       accent: 'from-neon-purple/20 via-neon-pink/10 to-transparent',
     },
     {
-      title: 'Desktop App Cybersecurity',
-      subtitle: 'Security built into the product',
-      icon: <Shield className="text-neon-pink" size={26} />,
+      title: 'Advanced AI Apps (incl. Medical)',
+      subtitle: 'Domain-focused AI with models like Gemma',
+      icon: <Palette className="text-neon-pink" size={26} />,
       highlights: [
-        'Threat modeling and secure-by-design patterns',
-        'Safer auth/session handling and data protection',
-        'Hardening basics: secrets, updates, logging',
+        'RAG, fine-tuning, and evaluation for reliability',
+        'Clinical/medical assistants and decision support',
+        'Compliance-aware data handling and auditing',
       ],
       accent: 'from-neon-pink/20 via-neon-cyan/10 to-transparent',
+    },
+    {
+      title: 'AI Integration & Intelligent Systems',
+      subtitle: 'Embed AI into existing products and ops',
+      icon: <Shield className="text-neon-green" size={26} />,
+      highlights: [
+        'Agent workflows, automation, and copilots',
+        'LLM orchestration, prompt pipelines, monitoring',
+        'SMB and enterprise automation (Kenya/E.A.)',
+      ],
+      accent: 'from-neon-cyan/20 via-neon-purple/10 to-transparent',
+    },
+    {
+      title: 'CCTV & Network Management Systems',
+      subtitle: 'Deployments, monitoring, and reliable connectivity',
+      icon: <Shield className="text-neon-cyan" size={26} />,
+      highlights: [
+        'CCTV/NVR/VMS setup and health monitoring',
+        'Network design, hardening, and observability (NMS)',
+        'Branch connectivity and remote access',
+      ],
+      accent: 'from-neon-blue/20 via-neon-cyan/10 to-transparent',
+    },
+    {
+      title: 'Data Recovery & Continuity',
+      subtitle: 'Backups, recovery, and disaster-readiness',
+      icon: <Palette className="text-neon-purple" size={26} />,
+      highlights: [
+        'Data recovery workflows and backup strategy',
+        'Versioned storage and restoration drills',
+        'Business continuity & incident runbooks',
+      ],
+      accent: 'from-neon-purple/20 via-neon-pink/10 to-transparent',
+    },
+    {
+      title: 'Automotive Robotics & ADAS',
+      subtitle: 'Prototyping autonomy and driver assistance',
+      icon: <MonitorSmartphone className="text-neon-blue" size={26} />,
+      highlights: [
+        'Sensor fusion (camera, LiDAR-lite, GPS/IMU)',
+        'Edge inference and telemetry logging',
+        'Safety-first testing and data pipelines',
+      ],
+      accent: 'from-neon-blue/20 via-neon-green/10 to-transparent',
+    },
+    {
+      title: 'Bespoke “Impossible” Applications',
+      subtitle: 'If it solves a real problem, we can build it',
+      icon: <Shield className="text-neon-orange" size={26} />,
+      highlights: [
+        'Rapid discovery, PoCs, and iterative delivery',
+        'Tight feedback loops with stakeholders',
+        'From prototype to production with governance',
+      ],
+      accent: 'from-neon-orange/20 via-neon-pink/10 to-transparent',
     },
   ];
 
@@ -48,14 +103,14 @@ const Profession: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-display font-bold mb-4">Professional Focus</h2>
+          <h2 className="text-4xl font-display font-bold mb-4">Professional Services</h2>
           <p className="text-slate-400 max-w-2xl mx-auto">
             I build polished interfaces and dependable software, with security in mind from day one.
           </p>
           <div className="w-20 h-1 bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-pink mx-auto mt-6 rounded-full shadow-[0_0_10px_rgba(188,19,254,0.5)]"></div>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
           {services.map((service, idx) => (
             <motion.div
               key={service.title}

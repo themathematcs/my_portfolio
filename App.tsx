@@ -4,6 +4,7 @@
 
 // // 1. Components that MUST load immediately (above the fold)
 // import Hero from './components/Hero';
+import Navbar from './components/Navbar';
 // import Footer from './components/Footer';
 
 // // 2. Components to be LAZILY LOADED (below the fold / less critical)
@@ -86,7 +87,8 @@
 //     return (
 //         <div className="min-h-screen text-slate-200 selection:bg-neon-cyan selection:text-black relative">
 //             <PaintBackground />
-//             <Hero />
+//             <Navbar />
+            <Hero />
             
 //             {/* Wrap the lazy-loaded components in Suspense */}
 //             <Suspense fallback={
@@ -109,7 +111,6 @@
 // export default App;
 
 import React, { lazy, Suspense, useState } from 'react'; // <-- ADD useState here
-import { motion } from 'framer-motion';
 
 // 1. Components that MUST load immediately (above the fold)
 import Hero from './components/Hero';
@@ -118,42 +119,17 @@ import Footer from './components/Footer';
 // 2. Components to be LAZILY LOADED (below the fold / less critical)
 const About = lazy(() => import('./components/About'));
 const Skills = lazy(() => import('./components/Skills'));
-const Certifications = lazy(() => import('./components/Certifications'));
 const Profession = lazy(() => import('./components/Profession'));
+const TechStack = lazy(() => import('./components/TechStack'));
+const UseCases = lazy(() => import('./components/UseCases'));
 const Projects = lazy(() => import('./components/Projects'));
+const CaseStudies = lazy(() => import('./components/CaseStudies'));
+const Certifications = lazy(() => import('./components/Certifications'));
 const AIChat = lazy(() => import('./components/AIChat')); // This is the component we'll toggle
+const CTA = lazy(() => import('./components/CTA'));
 
 
-// Paint Effect Background Component (remains the same)
-const PaintBackground = () => {
-    return (
-        <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-            <div
-                className="absolute inset-0 opacity-[0.10]"
-                style={{
-                    backgroundImage:
-                        'repeating-linear-gradient(0deg, rgba(255,255,255,0.55) 0px, rgba(255,255,255,0.55) 1px, transparent 1px, transparent 34px), repeating-linear-gradient(90deg, rgba(0,0,0,0.40) 0px, rgba(0,0,0,0.40) 1px, transparent 1px, transparent 34px)',
-                }}
-            />
-
-            <motion.div
-                className="absolute left-1/2 top-1/2 w-[70vmin] h-[70vmin] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[70px] opacity-40 mix-blend-overlay"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 22, repeat: Infinity, ease: 'linear' }}
-                style={{
-                    background:
-                        'conic-gradient(from 0deg, rgba(255,255,255,0.35), rgba(0,0,0,0.28), rgba(255,255,255,0.18), rgba(0,0,0,0.35), rgba(255,255,255,0.35))',
-                    maskImage:
-                        'radial-gradient(circle, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.70) 45%, rgba(0,0,0,0.00) 72%)',
-                    WebkitMaskImage:
-                        'radial-gradient(circle, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.70) 45%, rgba(0,0,0,0.00) 72%)',
-                }}
-            />
-
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.00)_0%,rgba(0,0,0,0.55)_70%,rgba(0,0,0,0.80)_100%)]" />
-        </div>
-    );
-};
+// (PaintBackground removed)
 
 
 function App() {
@@ -172,7 +148,6 @@ function App() {
 
     return (
         <div className="min-h-screen text-slate-200 selection:bg-neon-cyan selection:text-black relative">
-            <PaintBackground />
             <Hero />
             
             {/* Wrap the lazy-loaded components in Suspense */}
@@ -181,11 +156,15 @@ function App() {
                     <p className="text-xl text-neon-cyan">Loading portfolio sections...</p>
                 </div>
             }>
-                <About />
                 <Skills />
-                <Certifications />
+                <About />
                 <Profession />
+                <UseCases />
                 <Projects />
+                <CaseStudies />
+                <TechStack />
+                <Certifications />
+                <CTA />
                 
                 {/* AIChat is now conditionally rendered */}
                 {/* When AIChat is rendered, we pass the close function */}

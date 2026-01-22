@@ -4,7 +4,7 @@
 // import { motion, AnimatePresence } from 'framer-motion';
 // import { MessageSquare, X, Send, Bot, Loader2 } from 'lucide-react';
 // // ⚠️ CHANGE 1: Import the new streaming function
-// import { streamMessageFromGemini } from '../services/geminiService'; 
+// import { streamMessageResilient } from '../services/resilientChat'; 
 // import { ChatMessage } from '../types';
 
 // const AIChat: React.FC = () => {
@@ -39,7 +39,7 @@
 //     setMessages(prev => [...prev, { role: 'model', text: '' }]);
     
 //     // 3. CALL THE NEW STREAMING FUNCTION and pass the user message and the state setter
-//     await streamMessageFromGemini(userMsg, setMessages);
+//     await streamMessageResilient(userMsg, setMessages);
 
 //     setIsLoading(false);
 //   };
@@ -140,7 +140,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 // ⚠️ Note: We now use X for the close button
 import { MessageSquare, X, Send, Bot, Loader2 } from 'lucide-react'; 
-import { streamMessageFromGemini } from '../services/geminiService'; 
+import { streamMessageResilient } from '../services/resilientChat'; 
 import { ChatMessage } from '../types';
 
 type AIChatProps = {
@@ -179,7 +179,7 @@ const AIChat: React.FC<AIChatProps> = ({ onClose }) => {
     setMessages(prev => [...prev, { role: 'model', text: '' }]);
     
     // 3. CALL THE NEW STREAMING FUNCTION
-    await streamMessageFromGemini(userMsg, setMessages);
+    await streamMessageResilient(userMsg, setMessages);
 
     setIsLoading(false);
   };

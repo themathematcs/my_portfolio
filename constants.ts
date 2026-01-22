@@ -196,26 +196,44 @@ export const CONTACT_INFO: ContactInfo = {
     github: "https://github.com/themathematcs"
 };
 
+export const AUTHOR_NAME = "Christian Nganga";
+
 export const ABOUT_ME = `
-Aspiring AI/Machine Learning Engineer with foundational knowledge in machine learning, deep learning, and computer vision gained through hands-on certifications from Kaggle. Eager to apply skills in Python and TensorFlow to develop innovative AI solutions, including text classification models for sentiment analysis. Passionate about leveraging AI to solve real-world problems in automation and technology.
+Experienced Software & AI Engineer delivering production-ready applications across mobile, systems automation, and advanced AI. I build secure, scalable solutions for SMEs and enterprises in Kenya and the wider E.A. region — from Android/React Native apps and .NET/Node APIs to RAG/LLM assistants (incl. medical with Gemma), CCTV/NMS monitoring, and data recovery/continuity. I focus on clear outcomes, reliability, and thoughtful architecture.
 `;
 
 export const SKILLS: Skill[] = [
     {
-        category: "Programming & Frameworks",
-        items: ["Python", "TensorFlow", "Scikit-learn", "Pandas", "NumPy", "OpenCV"]
+        category: "Mobile Apps",
+        items: ["Android", "React Native", "Flutter", ".NET MAUI", "Offline‑first", "Play Store/Release"]
     },
     {
-        category: "Machine Learning",
-        items: ["Supervised Learning", "Unsupervised Learning", "Model Evaluation", "Predictive Modeling"]
+        category: "Backend & APIs",
+        items: [".NET", "Node.js", "REST/GraphQL", "Auth & RBAC", "CI/CD", "Observability"]
     },
     {
-        category: "Deep Learning",
-        items: ["Neural Networks", "CNNs", "Object Detection", "Feature Extraction"]
+        category: "AI/ML & CV",
+        items: ["Python", "TensorFlow", "RAG", "LLM Orchestration", "OpenCV", "Evaluation"]
     },
     {
-        category: "Tools & Others",
-        items: ["Git", "Jupyter Notebooks", "Basic Networking", "Automation"]
+        category: "Payments & Messaging",
+        items: ["M‑Pesa STK/USSD", "WhatsApp Business", "WhatsApp Cloud API", "SMS/Email Gateways"]
+    },
+    {
+        category: "Data & Storage",
+        items: ["PostgreSQL", "SQLite", "Vector DB (FAISS)", "Backups", "DR/Recovery"]
+    },
+    {
+        category: "Cloud & Infra",
+        items: ["AWS/Azure/GCP", "Docker", "Kubernetes", "On‑prem", "Networking", "Security"]
+    },
+    {
+        category: "CCTV & Networking",
+        items: ["CCTV/NVR/VMS", "Dahua/Hikvision", "NMS", "MikroTik/Ubiquiti", "RTSP Analytics"]
+    },
+    {
+        category: "Robotics & Edge",
+        items: ["Edge AI", "Telemetry", "Sensor Fusion", "ADAS Prototyping", "Fleet Tracking"]
     }
 ];
 
