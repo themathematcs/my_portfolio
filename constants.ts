@@ -157,7 +157,7 @@
 //                 setMessages(prevMessages => {
 //                     const newMessages = [...prevMessages];
 //                     const lastMessage = newMessages[newMessages.length - 1];
-                    
+
 //                     if (lastMessage.role === 'model') {
 //                         lastMessage.text = fullResponseText; // Replace the text entirely for smoother stream
 //                     }
@@ -286,6 +286,22 @@ export const CERTIFICATIONS: Certification[] = [
 ];
 
 export const PROJECTS: Project[] = [
+    {
+        id: "sentinel-csim",
+        title: "Sentinel AI Platform (CSIM)",
+        description: "A military-grade Converged Security Information Management platform. Fuses real-time physical security (CCTV, Access Control) with digital forensics. Features proprietary Neural Vision Layers for zero-day threat detection and an Immutable Cryptographic Vault for tamper-proof evidence storage.",
+        technologies: ["React 19", "Node.js", "Neural Vision", "WORM Storage", "ZFS"],
+        type: "AI/Security",
+        link: "https://sentinel-csim-v1.web.app/"
+    },
+    {
+        id: "forensic-station",
+        title: "Forensic Guardian Workstation",
+        description: "An L0-Certified digital investigation suite for post-incident analysis. Features Atomic Time-Travel (ZFS Snapshots) for instant ransomware recovery and a Cryptographic Vault for legally admissible, tamper-proof evidence management.",
+        technologies: ["React 19", "MinIO", "AES-256", "Audit Logs", "Digital Chain-of-Custody"],
+        type: "Cybersecurity/Forensics",
+        link: "https://sentinel-csim-v1.web.app/"
+    },
     {
         id: "sentiment-classifier",
         title: "Sentiment Analysis Text Classifier",
