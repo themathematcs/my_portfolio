@@ -303,6 +303,13 @@ export const PROJECTS: Project[] = [
         link: "https://sentinel-csim-v1.web.app/"
     },
     {
+        id: "nexus-epr",
+        title: "Nexus Enterprise Systems Hub",
+        description: "A centralized hyper-local ERP suite designed for multi-tenant retail environments. Fuses a high-availability Point of Sale (POS) with automated inventory forecasting, real-time M-Pesa STK payment flows, and comprehensive financial auditing pipelines.",
+        technologies: ["Next.js 15", "Prisma", "PostgreSQL", "M-Pesa API", "Tailwind CSS"],
+        type: "Enterprise ERP"
+    },
+    {
         id: "sentiment-classifier",
         title: "Sentiment Analysis Text Classifier",
         description: "Developed a machine learning model using TensorFlow and Python to classify movie reviews as positive or negative. Preprocessed text data, trained a neural network, and achieved improved accuracy through hyperparameter tuning.",
