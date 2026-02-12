@@ -113,7 +113,7 @@ import Navbar from './components/Navbar';
 import React, { lazy, Suspense, useState } from 'react'; // <-- ADD useState here
 
 // 1. Components that MUST load immediately (above the fold)
-import Hero from './components/Hero';
+import Hero from './components/Hero_v2';
 import Footer from './components/Footer';
 
 // 2. Components to be LAZILY LOADED (below the fold / less critical)

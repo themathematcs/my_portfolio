@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Shield, MonitorSmartphone, Palette, CheckCircle2 } from 'lucide-react';
+import { Shield, MonitorSmartphone, Palette, CheckCircle2, Terminal } from 'lucide-react';
 
 const Profession: React.FC = () => {
   const services = [
@@ -110,42 +110,47 @@ const Profession: React.FC = () => {
           <div className="w-20 h-1 bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-pink mx-auto mt-6 rounded-full shadow-[0_0_10px_rgba(188,19,254,0.5)]"></div>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {services.map((service, idx) => (
             <motion.div
               key={service.title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.08 }}
-              whileHover={{ y: -6 }}
-              className="glass-card rounded-3xl p-8 relative overflow-hidden group transition-all duration-300"
+              transition={{ delay: idx * 0.05 }}
+              whileHover={{ y: -10 }}
+              className="glass-card rounded-[2.5rem] p-10 relative overflow-hidden group transition-all duration-500 hover:border-white/20"
             >
+              {/* Animated Accent Background */}
               <div
-                className={`absolute inset-0 bg-gradient-to-br ${service.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                className={`absolute inset-0 bg-gradient-to-br ${service.accent} opacity-10 group-hover:opacity-20 transition-opacity duration-700`}
               />
-              <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full blur-3xl bg-white/5 group-hover:bg-white/10 transition-colors" />
 
               <div className="relative z-10">
-                <div className="flex items-start justify-between mb-6">
-                  <div className="p-3 rounded-2xl bg-white/5 border border-white/10 group-hover:border-white/20 transition-colors">
-                    {service.icon}
-                  </div>
+                <div className="mb-10 inline-flex p-4 rounded-3xl bg-white/5 border border-white/10 group-hover:scale-110 group-hover:bg-white/10 transition-all duration-500">
+                  {service.icon}
                 </div>
 
-                <h3 className="text-2xl font-bold text-white group-hover:text-neon-cyan transition-colors">
-                  {service.title}
+                <h3 className="text-3xl font-black text-white leading-tight mb-4 group-hover:text-neon-cyan transition-colors">
+                  {service.title.split(' ').slice(0, 2).join(' ')}<br />
+                  <span className="text-lg opacity-80 font-medium">{service.title.split(' ').slice(2).join(' ')}</span>
                 </h3>
-                <p className="text-slate-400 mt-2 mb-6">{service.subtitle}</p>
 
-                <div className="space-y-3">
+                <p className="text-xs font-bold text-slate-500 uppercase tracking-[0.2em] mb-8">{service.subtitle}</p>
+
+                <div className="space-y-4">
                   {service.highlights.map((item) => (
-                    <div key={item} className="flex items-start gap-3">
-                      <CheckCircle2 size={18} className="text-neon-green mt-0.5 shrink-0" />
-                      <span className="text-slate-300 leading-relaxed">{item}</span>
+                    <div key={item} className="flex items-start gap-4 group/item">
+                      <div className="w-1.5 h-1.5 rounded-full bg-neon-cyan mt-2 group-hover/item:scale-150 transition-transform" />
+                      <span className="text-slate-400 text-sm group-hover/item:text-slate-200 transition-colors leading-snug">{item}</span>
                     </div>
                   ))}
                 </div>
+              </div>
+
+              {/* Decorative Corner Icon */}
+              <div className="absolute -bottom-6 -right-6 text-white/5 opacity-0 group-hover:opacity-10 transition-opacity">
+                <Terminal size={100} />
               </div>
             </motion.div>
           ))}
