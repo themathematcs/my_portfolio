@@ -352,7 +352,7 @@
 <section class="container" id="download">
   <div class="download-block">
     <h2>Get TradeTrack Pro.</h2>
-    <p class="sub">Windows installer, around 150 MB. Sets up itself, ships clean (no demo data). Future versions auto-install — no need to come back here.</p>
+    <p class="sub">Windows installer, ~85 MB. Sets up itself, ships clean (no demo data). Future versions auto-install — no need to come back here.</p>
     <a href="./TradeTrack-Pro-Setup.exe" class="btn-primary" style="font-size:16px;padding:16px 32px">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       Download for Windows
@@ -363,6 +363,89 @@
       <span><strong>Released:</strong> May 17, 2026</span>
       <span>·</span>
       <span><strong>Platform:</strong> Windows 10/11 x64</span>
+    </div>
+  </div>
+</section>
+
+<!-- Honest warning: Chrome + Windows flag every new indie .exe. -->
+<section class="container" id="install-help" style="padding-top:0">
+  <div style="background:linear-gradient(135deg, rgba(245,158,11,0.08), rgba(239,68,68,0.06)); border:1px solid rgba(245,158,11,0.35); border-radius:16px; padding:32px; position:relative; overflow:hidden">
+    <div style="position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg, transparent, #f59e0b, #ef4444, transparent); background-size:200% 100%; animation:shimmer 4s linear infinite"></div>
+
+    <div style="display:flex; gap:14px; align-items:flex-start; margin-bottom:20px">
+      <div style="flex-shrink:0; width:44px; height:44px; border-radius:12px; background:linear-gradient(135deg, #f59e0b, #ef4444); display:flex; align-items:center; justify-content:center; font-size:22px">⚠️</div>
+      <div>
+        <h2 style="margin:0 0 4px 0; font-size:24px">Chrome and Windows might warn you. Here's why — and how to install safely.</h2>
+        <p style="margin:0; color:var(--text-muted); line-height:1.6">
+          TradeTrack Pro is a brand-new app. Microsoft hasn't seen it before, so Chrome's Safe Browsing and Windows SmartScreen flag every download until enough people install it without reporting problems. <strong style="color:var(--text-body)">This is the same warning you see for new indie apps from any developer</strong> — not a sign anything is wrong with the file.
+        </p>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px; margin-top:20px">
+      <!-- Chrome step -->
+      <div style="padding:18px; border-radius:12px; background:rgba(2,6,23,0.55); border:1px solid var(--border)">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px">
+          <span style="width:24px; height:24px; border-radius:50%; background:#3b82f6; color:#fff; display:flex; align-items:center; justify-content:center; font-family:var(--font-mono); font-weight:800; font-size:12px">1</span>
+          <strong style="color:var(--text-strong); font-size:15px">In Chrome</strong>
+        </div>
+        <p style="margin:0; font-size:13px; line-height:1.65; color:var(--text-body)">
+          When Chrome says <em style="color:#fbbf24">"This file is dangerous"</em>:
+        </p>
+        <ol style="margin:8px 0 0 0; padding-left:18px; font-size:13px; line-height:1.7; color:var(--text-body)">
+          <li>Click the small ⌄ arrow next to the file at the bottom</li>
+          <li>Click <strong>Keep</strong></li>
+          <li>If asked again, click <strong>Keep anyway</strong></li>
+        </ol>
+      </div>
+
+      <!-- Windows step -->
+      <div style="padding:18px; border-radius:12px; background:rgba(2,6,23,0.55); border:1px solid var(--border)">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px">
+          <span style="width:24px; height:24px; border-radius:50%; background:#8b5cf6; color:#fff; display:flex; align-items:center; justify-content:center; font-family:var(--font-mono); font-weight:800; font-size:12px">2</span>
+          <strong style="color:var(--text-strong); font-size:15px">When you double-click the installer</strong>
+        </div>
+        <p style="margin:0; font-size:13px; line-height:1.65; color:var(--text-body)">
+          Windows SmartScreen shows <em style="color:#fbbf24">"Windows protected your PC"</em>:
+        </p>
+        <ol style="margin:8px 0 0 0; padding-left:18px; font-size:13px; line-height:1.7; color:var(--text-body)">
+          <li>Click <strong>More info</strong> (small grey link)</li>
+          <li>Click <strong>Run anyway</strong></li>
+          <li>The installer wizard opens</li>
+        </ol>
+      </div>
+
+      <!-- Antivirus step -->
+      <div style="padding:18px; border-radius:12px; background:rgba(2,6,23,0.55); border:1px solid var(--border)">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px">
+          <span style="width:24px; height:24px; border-radius:50%; background:#22c55e; color:#fff; display:flex; align-items:center; justify-content:center; font-family:var(--font-mono); font-weight:800; font-size:12px">3</span>
+          <strong style="color:var(--text-strong); font-size:15px">If your antivirus complains</strong>
+        </div>
+        <p style="margin:0; font-size:13px; line-height:1.65; color:var(--text-body)">
+          Some antivirus tools (Avast, Bitdefender, Norton) flag unsigned installers heuristically. You can either:
+        </p>
+        <ul style="margin:8px 0 0 0; padding-left:18px; font-size:13px; line-height:1.7; color:var(--text-body)">
+          <li>Add an exception for <span style="font-family:var(--font-mono); font-size:11px">TradeTrack-Pro-Setup.exe</span></li>
+          <li>WhatsApp me a screenshot — I'll help: <a href="https://wa.me/254743269133" style="color:#22c55e">0743269133</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Trust signals -->
+    <div style="margin-top:24px; padding-top:20px; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:20px; align-items:center; justify-content:space-between">
+      <div style="font-size:13px; color:var(--text-muted); line-height:1.6; max-width:520px">
+        <strong style="color:var(--text-body)">Why should you trust me?</strong>
+        I'm Christian Nganga, a Kenyan developer. The app stores everything locally on your machine — no cloud, no account, no telemetry. Code signing certs cost $200–600/year and I haven't bought one yet (free software shipping for free).
+        Reach me directly with any concern.
+      </div>
+      <div style="display:flex; gap:8px; flex-wrap:wrap">
+        <a href="https://wa.me/254743269133" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; padding:10px 16px; border-radius:8px; background:#22c55e; color:#fff; font-weight:700; font-size:13px; text-decoration:none">
+          💬 WhatsApp me
+        </a>
+        <a href="https://christianngnga.netlify.app/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; padding:10px 16px; border-radius:8px; background:rgba(2,6,23,0.5); color:var(--text-strong); font-weight:600; font-size:13px; text-decoration:none; border:1px solid var(--border)">
+          🌐 See my portfolio
+        </a>
+      </div>
     </div>
   </div>
 </section>
