@@ -1,0 +1,21 @@
+import{c as t,j as e,a}from"./index-BeLRB5pb.js";import{S as i}from"./smartphone-DhemaoM0.js";import{B as n}from"./bot-s8D_SwuP.js";import{C as r}from"./car-Bx8ZSiDz.js";/**
+ * @license lucide-react v0.556.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const o=[["path",{d:"M10 12h4",key:"a56b0p"}],["path",{d:"M10 8h4",key:"1sr2af"}],["path",{d:"M14 21v-3a2 2 0 0 0-4 0v3",key:"1rgiei"}],["path",{d:"M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2",key:"secmi2"}],["path",{d:"M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16",key:"16ra0t"}]],c=t("building-2",o);/**
+ * @license lucide-react v0.556.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const l=[["path",{d:"M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5",key:"mvr1a0"}],["path",{d:"M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27",key:"auskq0"}]],d=t("heart-pulse",l);/**
+ * @license lucide-react v0.556.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const h=[["circle",{cx:"8",cy:"21",r:"1",key:"jimo8o"}],["circle",{cx:"19",cy:"21",r:"1",key:"13723u"}],["path",{d:"M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12",key:"9zh506"}]],m=t("shopping-cart",h);/**
+ * @license lucide-react v0.556.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const p=[["path",{d:"M11 2v2",key:"1539x4"}],["path",{d:"M5 2v2",key:"1yf1q8"}],["path",{d:"M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1",key:"rb5t3r"}],["path",{d:"M8 15a6 6 0 0 0 12 0v-3",key:"x18d4x"}],["circle",{cx:"20",cy:"10",r:"2",key:"ts1r5v"}]],x=t("stethoscope",p),u=[{icon:e.jsx(x,{size:18,className:"text-neon-cyan"}),title:"Clinic AI triage",blurb:"Symptom intake, structured notes, and risk flags to support clinicians."},{icon:e.jsx(d,{size:18,className:"text-neon-pink"}),title:"Medical assistants (Gemma)",blurb:"Domain-tuned LLM for care guidance with audit trails and safeguards."},{icon:e.jsx(i,{size:18,className:"text-neon-green"}),title:"Sales CRM mobile app",blurb:"Offline-first pipeline tracking with secure sync and analytics."},{icon:e.jsx(m,{size:18,className:"text-neon-purple"}),title:"Pharmacy stock automation",blurb:"Low-inventory alerts, purchase suggestions, and barcode workflows."},{icon:e.jsx(n,{size:18,className:"text-neon-blue"}),title:"Ops automation & agents",blurb:"Schedulers, bots, and AI copilots integrated with business systems."},{icon:e.jsx(r,{size:18,className:"text-neon-cyan"}),title:"ADAS & autonomy prototyping",blurb:"Edge vision models, telemetry logging, and driver-assist experiments."},{icon:e.jsx(a,{size:18,className:"text-neon-green"}),title:"Fleet tracking & safety",blurb:"Vehicle tracking, driver scoring, and incident video retrieval."},{icon:e.jsx(c,{size:18,className:"text-neon-orange"}),title:"Dashboards & ERP",blurb:"Custom dashboards, role-based access, and data pipelines."}],j=()=>e.jsx("section",{className:"py-16 px-4",id:"use-cases",children:e.jsxs("div",{className:"max-w-6xl mx-auto",children:[e.jsxs("div",{className:"flex items-center justify-between mb-6",children:[e.jsx("h3",{className:"text-2xl font-display font-bold",children:"Selected Use Cases"}),e.jsx("span",{className:"px-3 py-1 rounded-full text-xs bg-white/5 border border-white/10",children:"autoQriz254"})]}),e.jsx("div",{className:"grid sm:grid-cols-2 lg:grid-cols-3 gap-4",children:u.map(s=>e.jsx("div",{className:"glass-card rounded-2xl p-5 hover:bg-white/10 transition",children:e.jsxs("div",{className:"flex items-start gap-3",children:[e.jsx("div",{className:"p-2 rounded-xl bg-white/5 border border-white/10",children:s.icon}),e.jsxs("div",{children:[e.jsx("div",{className:"font-semibold text-white",children:s.title}),e.jsx("div",{className:"text-slate-400 text-sm mt-1",children:s.blurb})]})]})},s.title))})]})});export{j as default};
